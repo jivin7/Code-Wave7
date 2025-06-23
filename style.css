@@ -30,9 +30,7 @@ header {
   padding: 3rem 1.5rem;
   text-align: center;
   box-shadow: var(--shadow);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  /* Sticky removed so header scrolls with the page */
 }
 
 header h1 {
@@ -154,3 +152,4 @@ footer {
     font-size: 0.95rem;
   }
 }
+

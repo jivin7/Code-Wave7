@@ -1,38 +1,42 @@
+// main.js
+
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form");
-  const button = form.querySelector("button");
-  const originalText = button.textContent;
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
 
-  form.addEventListener("submit", async function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
-    button.textContent = "Sending...";
-    button.disabled = true;
 
-    const formData = new FormData(form);
+    status.textContent = "Sending...";
+    status.style.color = "#007bff";
 
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          Accept: "application/json"
-        }
-      });
+    const loader = document.createElement("div");
+    loader.textContent = "⏳ Sending...";
+    loader.style.color = "#007bff";
+    loader.style.fontWeight = "bold";
+    loader.style.marginTop = "1rem";
+    status.replaceWith(loader);
 
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
       if (response.ok) {
-        button.textContent = "Sent!";
+        loader.textContent = "✅ Message sent successfully!";
+        loader.style.color = "green";
         form.reset();
+        
         setTimeout(() => {
-          button.textContent = originalText;
-          button.disabled = false;
-        }, 2000);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 1500);
       } else {
-        throw new Error("Submission failed.");
+        loader.textContent = "❌ Something went wrong. Please try again.";
+        loader.style.color = "red";
       }
-    } catch (error) {
-      alert("Oops! Something went wrong.");
-      button.textContent = originalText;
-      button.disabled = false;
-    }
+    }).catch(() => {
+      loader.textContent = "⚠️ Failed to send. Check your internet.";
+      loader.style.color = "orange";
+    });
   });
 });

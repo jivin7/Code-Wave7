@@ -152,4 +152,19 @@ footer {
     font-size: 0.95rem;
   }
 }
+/* === Header with Logo and Title === */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#logo {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 

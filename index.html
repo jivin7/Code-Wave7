@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0066ff" />
   <title>Code Wave | Website Design & Development</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
@@ -118,7 +119,7 @@
       border-top: 4px solid #0066ff;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       header h1 {
         font-size: 2.2rem;
       }
@@ -131,6 +132,37 @@
       .cta-button {
         padding: 0.6rem 1.3rem;
         font-size: 0.95rem;
+      }
+
+      #portfolio ul,
+      #pricing ul {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      #portfolio ul li,
+      #pricing ul li {
+        background: #fff;
+        margin-bottom: 1.2rem;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      #portfolio p,
+      #pricing p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      #pricing ul li small {
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        color: #555;
       }
     }
   </style>
@@ -177,22 +209,21 @@
 
   <section id="portfolio" class="intro" data-aos="fade-left">
     <h2>Our Work</h2>
-    <p>Check out some of the premium websites we've crafted for clients across various industries:</p>
+    <p>We create real marketing visuals and use Canva to build beautiful designs. Here are examples of what we made for clients:</p>
     <ul>
-      <li><strong>Glow Cosmetics</strong> – A luxury beauty brand e-commerce platform</li>
-      <li><strong>Nova Studio</strong> – A creative portfolio for a design agency</li>
-      <li><strong>FastGo</strong> – A landing page for a mobile app startup</li>
+      <li><strong>Glow Cosmetics</strong> – Stylish e-commerce design</li>
+      <li><strong>Nova Studio</strong> – Clean creative agency layout</li>
+      <li><strong>FastGo</strong> – Mobile app landing page</li>
     </ul>
   </section>
 
   <section id="pricing" class="features" data-aos="zoom-in">
     <h2>Pricing (EGP)</h2>
     <ul>
-      <li><strong>Starter Website</strong> – EGP 200<br><small>1-Page design, contact form, mobile-ready</small></li>
-      <li><strong>Business Website</strong> – EGP 400<br><small>Multi-page, blog, SEO optimized, CMS ready</small></li>
-      <li><strong>Premium Website</strong> – EGP 600+<br><small>Custom UI/UX, animations, advanced features, e-commerce ready</small></li>
+      <li><strong>Starter Website</strong> – EGP 200<br><small>Single page, contact form</small></li>
+      <li><strong>Business Website</strong> – EGP 400<br><small>Multi-page, blog ready</small></li>
+      <li><strong>Premium Website</strong> – EGP 600+<br><small>Contact form, animations, features</small></li>
     </ul>
-    <p>Contact us for custom project estimates and add-ons.</p>
   </section>
 
   <section id="contact" class="contact" data-aos="fade-up">
@@ -214,10 +245,7 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({
-      duration: 1200,
-      once: true,
-    });
+    AOS.init({ duration: 1200, once: true });
 
     const originalAbout = `
       <p class="small-about-text">
@@ -227,30 +255,64 @@
 
     function showOnlyAbout() {
       document.getElementById("site-title").innerText = "ABOUT";
-
       document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
 
-      document.getElementById("about").style.display = "block";
+      const about = document.getElementById("about");
+      about.style.display = "block";
       document.querySelector("header p").style.display = "none";
       document.getElementById("main-nav").style.display = "none";
-
       document.getElementById("logo-container").style.display = "flex";
 
+      // Add one title "About"
       const aboutDescription = document.getElementById("about-description");
       aboutDescription.innerHTML = `
         <div class="section-box">
           <h3>About Us</h3>
           <p>
-            Code Wave is a creative web design and development studio that helps businesses succeed online. We combine clean design, smart coding, and powerful features to make your website fast, mobile-ready, and attractive. Our team understands what small businesses need — and we build it for them with quality and care.
+            Code Wave is a creative web design and development studio that helps businesses succeed online. We combine clean design, smart coding, and powerful features to make your website fast, mobile-ready, and attractive.
           </p>
         </div>
         <div class="section-box">
-          <h3>Why You Need Code Wave</h3>
+          <h3>What We Do at Code Wave</h3>
           <p>
-            You need Code Wave if you want a website that doesn’t just look nice, but also works for your business. We help you build trust, attract more customers, and stand out in the digital world. With our team, you’ll get a complete solution — design, development, and launch — all done with heart and skill.
+            At Code Wave, we build websites, landing pages, and online tools that are beautiful and functional. We use tools like Canva, Figma, and Webflow to create designs that work well and help clients grow.
           </p>
         </div>
       `;
+
+      // Create new separate section with title "Why You Need CodeWave"
+      const whySection = document.createElement("section");
+      whySection.id = "why-codewave";
+      whySection.innerHTML = `
+        <h2>Why You Need CodeWave</h2>
+        <div class="section-box">
+          <p>
+  You need Code Wave if you're ready to take your business seriously online. In today’s world, having a basic or outdated website simply isn’t enough. Customers judge your brand in seconds — and if your website isn’t fast, mobile-friendly, and professionally designed, they’ll leave before you ever get a chance. At Code Wave, we don’t just build websites; we craft powerful digital experiences that help you grow.
+
+  <br><br>
+
+  What makes us different? We care about results. Our websites aren’t just beautiful — they’re built to convert. That means we focus on what really matters: clean user experience, smart layout, fast performance, search engine optimization, and content that keeps your visitors engaged. Whether you're selling products, offering services, or building your brand, your website will actually help you reach your goals.
+
+  <br><br>
+
+  We understand that most business owners don’t have time for tech headaches. That’s why we handle everything — from design, development, domain setup, and hosting, to forms, animations, Google SEO, and long-term support. You won’t need to chase 5 different people to get your website working — we are your one-stop web solution.
+
+  <br><br>
+
+  Our team doesn’t use templates. Every site is custom-built with care to match your business and your audience. We design with tools like Figma and Canva, and we code by hand when needed — so your site doesn’t just work, it stands out. We’re mobile-first, because we know most of your customers are coming from phones. We make sure every page works perfectly, no matter the screen.
+
+  <br><br>
+
+  Our clients stay with us for a reason — because we’re reliable. We answer messages. We update your site when you ask. We explain things in simple words. We treat your business like it’s our own. And we never leave you hanging. From small personal websites to full e-commerce shops, we’ve helped many brands grow — and we want you to be next.
+
+  <br><br>
+
+  Choosing Code Wave means choosing a partner who’s in it for the long run. We care about your success. We celebrate your wins. And we’re ready to help you look professional, build trust, and get ahead of your competitors. If you want a website that actually does its job — brings you more leads, more sales, more respect — then it’s time to work with Code Wave.
+</p>
+
+        </div>
+      `;
+      about.after(whySection);
 
       const readMoreBtn = document.querySelector('#about button');
       if (readMoreBtn) readMoreBtn.style.display = "none";
@@ -258,18 +320,17 @@
 
     function gohome() {
       document.getElementById("site-title").innerText = "CODE WAVE";
-
       document.querySelectorAll("section").forEach(sec => sec.style.display = "block");
-
       document.querySelector("header p").style.display = "block";
       document.getElementById("main-nav").style.display = "flex";
-
+      document.getElementById("logo-container").style.display = "none";
       document.getElementById("about-description").innerHTML = originalAbout;
 
       const readMoreBtn = document.querySelector('#about button');
       if (readMoreBtn) readMoreBtn.style.display = "inline-block";
 
-      document.getElementById("logo-container").style.display = "none";
+      const extraSection = document.getElementById("why-codewave");
+      if (extraSection) extraSection.remove();
     }
   </script>
 </body>

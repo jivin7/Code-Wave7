@@ -1,8 +1,6 @@
-/* style.css */
 :root {
   --primary-color: #0066ff;
   --primary-dark: #004bb5;
-  --accent-color: #00d4ff;
   --background: #f5f7fb;
   --text-dark: #1a1a1a;
   --text-light: #fff;
@@ -30,7 +28,42 @@ header {
   padding: 3rem 1.5rem;
   text-align: center;
   box-shadow: var(--shadow);
-  /* Sticky removed so header scrolls with the page */
+}
+
+.header-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 1rem;
+}
+
+#logo-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+  z-index: 999;
+}
+
+#img {
+  width: 100px;
+  height: auto;
+  max-height: 100px;
+  cursor: pointer;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 0;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+#img:hover {
+  transform: scale(1.05);
 }
 
 header h1 {
@@ -45,11 +78,11 @@ header p {
 }
 
 nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-top: 1.5rem;
-}
-
-nav a.cta-button {
-  margin: 0.25rem 0.5rem;
 }
 
 .cta-button {
@@ -85,9 +118,24 @@ h2 {
   padding-left: 0.75rem;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+.section-box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.section-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.section-box p,
+.small-about-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #222;
 }
 
 .features ul li,
@@ -101,6 +149,11 @@ ul {
 .features ul li i {
   margin-right: 12px;
   color: var(--primary-color);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 input[type="text"],
@@ -123,10 +176,6 @@ textarea:focus {
   box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2);
 }
 
-form label {
-  font-weight: bold;
-}
-
 footer {
   text-align: center;
   padding: 2rem;
@@ -137,6 +186,7 @@ footer {
   border-top: 4px solid var(--primary-color);
 }
 
+/* ✅ Mobile fixes */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2.2rem;
@@ -151,20 +201,35 @@ footer {
     padding: 0.6rem 1.3rem;
     font-size: 0.95rem;
   }
-}
-/* === Header with Logo and Title === */
-.header-top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
 
-#logo {
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+  #portfolio ul,
+  #pricing ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
 
+  #portfolio ul li,
+  #pricing ul li {
+    background: #fff;
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  #portfolio p,
+  #pricing p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  #pricing ul li small {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+}

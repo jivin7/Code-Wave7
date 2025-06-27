@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0066ff" />
+  <title>About | Code Wave</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f5f7fb, #eef1f7);
+      margin: 0;
+      padding: 0;
+    }
+
+    #logo-container {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 999;
+      display: block;
+    }
+
+    #logo-img {
+      width: 90px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    #logo-img:hover {
+      transform: scale(1.05);
+    }
+
+    h1#site-title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-top: 4rem;
+      color: #0066ff;
+      letter-spacing: 1px;
+    }
+
+    .section-box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      margin: 2rem auto;
+      max-width: 960px;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .section-box:hover {
+      transform: translateY(-2px);
+    }
+
+    .section-box h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #0066ff;
+      padding-left: 0.75rem;
+      color: #004bb5;
+    }
+
+    .section-box p {
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: #222;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      color: #aaa;
+      font-size: 0.95rem;
+      margin-top: 4rem;
+      border-top: 4px solid #0066ff;
+    }
+  </style>
+</head>
+<body>
+  <!-- ✅ Logo top-left -->
+  <div id="logo-container">
+    <img id="logo-img" src="img 1.png" alt="Code Wave Logo" onclick="goHome()" title="Go to Home" />
+  </div>
+
+  <h1 id="site-title">About</h1>
+
+  <!-- ✅ About box -->
+  <section class="section-box">
+    <h2>About Us</h2>
+    <p>
+      Code Wave is a creative web design and development studio that helps businesses succeed online. We combine clean design, smart coding, and powerful features to make your website fast, mobile-ready, and attractive. Our team understands what small businesses need — and we build it for them with quality and care.
+      <br><br>
+      From simple landing pages to complete custom websites, we focus on user experience, performance, and modern design. Our tools include Canva, Figma, and real development stacks to give you flexible and scalable web solutions.
+    </p>
+  </section>
+
+  <!-- ✅ Why CodeWave box -->
+  <section class="section-box">
+    <h2>Why You Need CodeWave</h2>
+    <p>
+      You need Code Wave if you're ready to take your business seriously online. In today’s world, having a basic or outdated website simply isn’t enough. Customers judge your brand in seconds — and if your website isn’t fast, mobile-friendly, and professionally designed, they’ll leave before you ever get a chance.
+      <br><br>
+      At Code Wave, we craft powerful digital experiences that drive real business results. We focus on clean user experience, fast loading speeds, SEO, and engaging design. We handle everything from design, domain, and hosting to animation, forms, and marketing tools — all in one place.
+      <br><br>
+      We care about your brand, your growth, and your results. We use clear strategies, provide real support, and build each project with heart and skill. If you want your business to grow online, Code Wave is the team to trust.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Code Wave. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function goHome() {
+      // When clicked, go back to index.html
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

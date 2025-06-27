@@ -1,3 +1,4 @@
+/* === CodeWave Full Style Sheet === */
 :root {
   --primary-color: #0066ff;
   --primary-dark: #004bb5;
@@ -186,7 +187,61 @@ footer {
   border-top: 4px solid var(--primary-color);
 }
 
-/* ✅ Mobile fixes */
+/* 🌟 Responsive and Stylish Pricing Section */
+#pricing ul {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+
+#pricing ul li {
+  flex: 1 1 280px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+#pricing ul li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+#pricing ul li strong {
+  font-size: 1.4rem;
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--primary-dark);
+}
+
+#pricing ul li small {
+  font-size: 0.95rem;
+  display: block;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+#pricing ul li a.details-button {
+  margin-top: 1rem;
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+#pricing ul li a.details-button:hover {
+  background-color: var(--primary-dark);
+}
+
 @media (max-width: 768px) {
   header h1 {
     font-size: 2.2rem;
@@ -204,32 +259,49 @@ footer {
 
   #portfolio ul,
   #pricing ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
+    flex-direction: column;
   }
 
   #portfolio ul li,
   #pricing ul li {
-    background: #fff;
-    margin-bottom: 1.2rem;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    padding: 1.2rem;
     font-size: 1rem;
-    line-height: 1.5;
   }
 
-  #portfolio p,
-  #pricing p {
-    font-size: 1rem;
-    line-height: 1.6;
+  #pricing h2 {
+    font-size: 1.6rem;
   }
 
   #pricing ul li small {
-    display: block;
-    margin-top: 0.5rem;
     font-size: 0.9rem;
-    color: #555;
   }
+}
+  #whatsapp-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  text-align: center;
+}
+
+#whatsapp-floating img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#whatsapp-floating img:hover {
+  transform: scale(1.1);
+}
+
+#whatsapp-floating span {
+  display: block;
+  color: #0066ff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 5px;
 }
